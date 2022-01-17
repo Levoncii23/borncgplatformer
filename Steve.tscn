@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://steve_spritesframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Steve.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 12.0
+height = 6.0
+
+[node name="Steve" type="KinematicBody2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1, 0 )
+scale = Vector2( 0.395833, 0.416667 )
+frames = ExtResource( 1 )
+animation = "idle"
+playing = true
